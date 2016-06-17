@@ -23,10 +23,15 @@ typedef NS_ENUM(NSUInteger, GKFadeNavigationControllerNavigationBarVisibility) {
  */
 - (GKFadeNavigationControllerNavigationBarVisibility)preferredNavigationBarVisibility;
 
+@optional
+- (UIColor *)preferredNavigationBarTintColor;
+
 @end
 
 
 @interface GKFadeNavigationController : UINavigationController
+
+@property (nonatomic, strong, readonly) UIView *navigationBarBackground;
 
 /**
  You can ask GKFadeNavigationController to update it's navigation bar visibility using this function. Then the controller will ask its topViewController (in best scenario, a controller, which conforms to the GKFadeNavigationControllerDelegate protocol), then shows or hides the navigation bar based on what the -preferredNavigationBarVisibility returns in the controller.
